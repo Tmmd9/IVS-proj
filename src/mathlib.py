@@ -1,4 +1,4 @@
-#math library IVS
+# math library IVS
 
 
 pi = 3.141592653589793
@@ -21,8 +21,8 @@ def mul(x, y):
 
 
 def div(x, y):
-    if x == 0:
-        raise ValueError("Zero division")
+    if y == 0:
+        raise ZeroDivisionError("Zero division")
     else:
         return rounded(x / y)
 
@@ -34,7 +34,7 @@ def fact(x):
         raise ValueError("x must be grater than -1")
     elif x == 0:
         return 1
-    #recursive call
+    # recursive call
     else:
         return x * fact(x - 1)
 
@@ -42,15 +42,21 @@ def fact(x):
 # x = base
 # e = exponent
 def pow(x, e):
-    #zalezi ci budeme podporovat aj negativne cisla/desatine alebo len prirodzene
+    # zalezi ci budeme podporovat aj negativne cisla/desatine alebo len prirodzene
     """if not isinstance(e, int):
-        raise ValueError("Factorial supports only natural numbers")"""
+        raise ValueError("error")"""
     """if e <= 0:
         raise ValueError("exponent must be grater than 0")"""
+    if x == 0 and e < 0:
+        raise ValueError("Cannot raise zero to negative value")
     return rounded(x ** e)
 
-def sqr(x, n):
-    return rounded(x**(1/float(n)))
+
+def root(x, n):
+    if x<0:
+        raise ValueError("Cannot find root to negative value")
+    return rounded(x ** (1 / float(n)))
+
 
 def mod(x, y):
     if not isinstance(x, int):
