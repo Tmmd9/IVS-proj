@@ -71,7 +71,7 @@ def mod(x, y):
 
 # taylor series sin
 def sin(x):
-    iterations = 20
+    iterations = 50
     multiplier = 1
     n = x
     start = 3
@@ -84,7 +84,7 @@ def sin(x):
 
 # taylor series cos
 def cos(x):
-    iterations = 20
+    iterations = 50
     multiplier = 1
     n = 1
     start = 2

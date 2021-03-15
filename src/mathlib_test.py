@@ -1,10 +1,13 @@
-
 from unittest import TestCase
 from mathlib import *
 
+import math
+
+pi = 3.141592653589793
+
 class Add(TestCase):
     def test_addBasic(self):
-        self.assertEqual(0 ,add(0 ,0))
+        self.assertEqual(0, add(0, 0))
         self.assertEqual(1, add(1, 0))
         self.assertEqual(1, add(0, 1))
         self.assertEqual(4, add(4, 0))
@@ -33,12 +36,13 @@ class Add(TestCase):
         self.assertEqual(5, add(4.5, 0.5))
         self.assertEqual(-5.5, add(-8.5, 3))
         self.assertEqual(1.422, add(3, -1.578))
-        self.assertEqual( -0.578965, add(1, -1.578965))
+        self.assertEqual(-0.578965, add(1, -1.578965))
 
     def test_addHugeNumber(self):
         self.assertEqual(69101427, add(5847212, 63254215))
         self.assertEqual(150355, add(84523, 65832))
         self.assertEqual(419774, add(321020, 98754))
+
 
 class Sub(TestCase):
     def test_subBasic(self):
@@ -64,9 +68,10 @@ class Sub(TestCase):
         self.assertEqual(58690912, sub(52142366, -6548546))
 
     def test_subMultiple(self):
-        self.assertEqual(-1, sub(sub(1,1), 1))
-        self.assertEqual(-4, sub(sub(5,8), 1))
-        self.assertEqual(-1, sub(sub(1,sub(1,(sub(1,1)))), 1))
+        self.assertEqual(-1, sub(sub(1, 1), 1))
+        self.assertEqual(-4, sub(sub(5, 8), 1))
+        self.assertEqual(-1, sub(sub(1, sub(1, (sub(1, 1)))), 1))
+
 
 class Div(TestCase):
     def test_divBasic(self):
@@ -94,6 +99,7 @@ class Div(TestCase):
         self.assertEqual(913.03860302, div(51423659854, 56321452))
         self.assertEqual(3972.32921059, div(251254589.365, 63251.2))
 
+
 class Mul(TestCase):
     def test_mulBasic(self):
         self.assertEqual(25, mul(5, 5))
@@ -120,9 +126,10 @@ class Mul(TestCase):
         self.assertEqual(7671495544846154583, mul(23569896563, 325478541))
 
     def test_mulMultiple(self):
-        self.assertEqual(147, mul(mul(7,3), 7))
-        self.assertEqual(mul(mul(7,3), 7), mul(7, mul(7,3)))
+        self.assertEqual(147, mul(mul(7, 3), 7))
+        self.assertEqual(mul(mul(7, 3), 7), mul(7, mul(7, 3)))
         self.assertEqual(0, mul(mul(7, mul(mul(7, mul(7, 3)), 0)), mul(7, 3)))
+
 
 class Fact(TestCase):
     def test_factBasic(self):
@@ -134,6 +141,7 @@ class Fact(TestCase):
         self.assertEqual(479001600, fact(12))
         self.assertEqual(121645100408832000, fact(19))
 
+
 class Pow(TestCase):
     def test_powBasic(self):
         self.assertEqual(0, pow(0, 2))
@@ -142,7 +150,7 @@ class Pow(TestCase):
         self.assertEqual(27, pow(3, 3))
 
     def test_powNegativeFloat(self):
-        self.assertRaises(ValueError, pow, 0,-2)
+        self.assertRaises(ValueError, pow, 0, -2)
         self.assertRaises(ValueError, pow, 0, -10)
         self.assertEqual(0.25, pow(2, -2))
         self.assertEqual(0.5, pow(2, -1))
@@ -154,6 +162,7 @@ class Pow(TestCase):
         self.assertEqual(857375, pow(95, 3))
         self.assertEqual(90859024, pow(9532, 2))
 
+
 class Root(TestCase):
     def test_rootBasic(self):
         self.assertEqual(3, root(9, 2))
@@ -163,6 +172,65 @@ class Root(TestCase):
     def test_rootNegativeFloat(self):
         self.assertRaises(ValueError, root, -10, 2)
         self.assertRaises(ValueError, root, -10, -5)
-        self.assertEqual(round(1/3,8), root(9, -2))
-        self.assertEqual(round(1/3,8), root(27, -3))
+        self.assertEqual(round(1 / 3, 8), root(9, -2))
+        self.assertEqual(round(1 / 3, 8), root(27, -3))
 
+
+class Mod(TestCase):
+    def test_modBasic(self):
+        self.assertEqual(0, mod(0, 1))
+        self.assertEqual(0, mod(0, -1))
+        self.assertEqual(0, mod(5, 1))
+        self.assertEqual(1, mod(7, 2))
+        self.assertEqual(1, mod(10, 3))
+        self.assertEqual(15, mod(143, 32))
+        self.assertEqual(2, mod(198, 14))
+
+    def test_modNegative(self):
+        self.assertEqual(-1, mod(7, -2))
+        self.assertEqual(-2, mod(10, -3))
+        self.assertEqual(17, mod(-143, 32))
+        self.assertEqual(-2, mod(-198, -14))
+
+    def test_modFloatErr(self):
+        self.assertRaises(ValueError, mod, 0, 1.45)
+        self.assertRaises(ValueError, mod, 22, 11.8)
+        self.assertRaises(ValueError, mod, 1.6, 33)
+        self.assertRaises(ValueError, mod, 9.47, 131.141)
+
+class Sin(TestCase):
+    def test_sinBasic(self):
+        self.assertEqual(-0.95892427,sin(5))
+        self.assertEqual(0, sin(0))
+        self.assertEqual(0.84147098, sin(1))
+        self.assertEqual(0.90929743, sin(2))
+
+    def test_sinPi(self):
+        self.assertEqual(0,sin(2*math.pi))
+        self.assertEqual(0, sin(4 * math.pi))
+        self.assertEqual(0, sin(1 * math.pi))
+        self.assertEqual(-1, sin(3.5 * math.pi))
+        self.assertEqual(1, sin(2.5 * math.pi))
+        #self.assertEqual(1, sin(3 * math.pi))
+
+class Cos(TestCase):
+    def test_cosBasic(self):
+        self.assertEqual(0.28366219, cos(5))
+        self.assertEqual(1, cos(0))
+        self.assertEqual(0.54030231, cos(1))
+        self.assertEqual(-0.41614684, cos(2))
+
+
+    def test_cosPi(self):
+        self.assertEqual(1, cos(2 * math.pi))
+        self.assertEqual(1, cos(4 * math.pi))
+        self.assertEqual(-1, cos(1 * math.pi))
+        self.assertEqual(0, cos(3.5 * math.pi))
+        self.assertEqual(0, cos(2.5 * math.pi))
+
+class Tan(TestCase):
+    def test_tanBasic(self):
+        self.assertEqual(-3.38051494, tan(5))
+        self.assertEqual(0, tan(0))
+        self.assertEqual(1.5574077, tan(1))
+        self.assertEqual(-2.18503985, tan(2))
