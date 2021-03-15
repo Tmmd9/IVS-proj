@@ -91,5 +91,3 @@ def cos(x):
 
 def tan(x):
     return rounded(sin(x) / cos(x))
-
-print(pow(-5,-3))
