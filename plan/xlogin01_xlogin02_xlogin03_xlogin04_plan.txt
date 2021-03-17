@@ -1,8 +1,61 @@
-Tento soubor bude obsahovat:
+IVS - Projekt 2 - Týmová spolupráce
+=====================================================
+Vedoucí týmu: xkovac49 (Timotej Kováčik)
+xmedve04 (Anton Medvedev)
+xvacla31 (Jiří Václavič)
+xverev00 (Aleksandr Verevkin)
+=====================================================
+Termíny:
+18-03-2021
+      -   Plán projektu
+20-03-2021
+      - 	Testy + rozhranie matematickej knihovny
+01-04-2021
+      -   GUI  a prepojenie s knihovnou
+12-04-2021
+      -	  Instalátor a odinstalátor
+20-04-2021
+      -   Dokumentace + Makefile + Mockup + posledné úpravy
+29-04-2021
+      -   Produkt
+10-05-2021
+      -   Plán vs realita
+20-05-2021
+      -	  Prezentace
+21-05-2021
+      -   Instalace
+21-05-2021
+      -   Seznam problémů
+=====================================================
+Úkoly:
+Vytvoření repozitáře-----------------------------------------------------------------(xkovac49)
+Napsání plánu------------------------------------------------------------------------(xvacla31)
+Napsání testů------------------------------------------------------------------------(xkovac49)
+Implementace základních matematických operací----------------------------------------(xkovac49)
+Implementace pokročilých matematických operací---------------------------------------(xmedve04)
+Profiling----------------------------------------------------------------------------(xverev00)
+Vytvoření GUI------------------------------------------------------------------------(xmedve04)
+Napsání,vygenerování dokumentace za pomocí nástroje Doxygen--------------------------(xmedve04)
+Makefile-----------------------------------------------------------------------------(xverev00)
+Vytvoření instalátoru----------------------------------------------------------------(xvacla31)
+Vytvoření odinstalátoru--------------------------------------------------------------(xvacla31)
+Napsání uživatelské příručky v PDF---------------------------------------------------(xverev00)
+Readme file--------------------------------------------------------------------------(xvacla31)
+Soubor hodnoceni.txt-----------------------------------------------------------------(xkovac49)
+Mockup-------------------------------------------------------------------------------(xverev00)
+Code review
+=====================================================
 
--- stanovené termíny,
--- přidělení úkolů na projektu jednotlivým řešitelům,
--- zvolené komunikační kanály pro komunikaci v týmu a stanovená pravidla pro komunikaci (jsou-li nějaká),
--- zvolený systém pro správu verzí a hosting + informaci, jak do repozitáře mohou nahlédnout vyučující/cvičící (viz níže).
 
-Alternativně lze odevzdat archiv xlogin01_xlogin02_xlogin03_xlogin04_plan.zip, který bude obsahovat libovolný počet souborů xlogin01_xlogin02_xlogin03_xlogin04_plan* ("*" zastupuje libovolný počet libovolných znaků, tedy např. ".mpp" či "01.jpg"), přičemž plán zde může být vytvořený v MS Projectu či jiném programu (není-li daný program ve škole dostupný, je nutno odevzdat i exportovanou verzi v PDF či jpg).
+Komunikační kanály:
+Discord
+      - 	Tímové hovory raz za týždeň
+      -   Komunikácia ohľadom detailov projektu
+      -   Plánovanie daľších úloh
+
+Systém pro správu verzí a hosting:
+GitHub
+      -   Názov repozitára Tmmd9/IVS-proj
+      -   Pravidelne aktualizované
+      -   Repozitář(https://github.com/Tmmd9/IVS-proj) je sdílen pomocí e-mailu: ivs.kontrola@gmail.com
+
