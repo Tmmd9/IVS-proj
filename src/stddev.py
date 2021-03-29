@@ -1,4 +1,4 @@
-#spustenie napriklad profile.py <in.txt
+#spustenie napriklad stddev.py <in.txt
 
 from mathlib import *
 from fileinput import input
