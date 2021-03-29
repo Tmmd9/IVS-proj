@@ -1,3 +1,5 @@
+#spustenie napriklad profile.py <in.txt
+
 from mathlib import *
 from fileinput import input
 
