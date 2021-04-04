@@ -7,7 +7,7 @@ from fileinput import input
 def mean_calc(nums):
     sum = 0
     for num in nums:
-        sum = add(int(num),sum)
+        sum = add(float(num),sum)
 
     mean = div(sum,len(nums))
 
