@@ -62,12 +62,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_root.setFont(font)
         self.pushButton_root.setMouseTracking(False)
-        self.pushButton_root.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(32, 140, 255);\n"
+        self.pushButton_root.setStyleSheet("QPushButton:pressed {\n"
+"background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
 "")
@@ -77,7 +73,7 @@ class Ui_MainWindow(object):
         self.pushButton_root.setAutoExclusive(False)
         self.pushButton_root.setAutoDefault(False)
         self.pushButton_root.setDefault(False)
-        self.pushButton_root.setFlat(True)
+        self.pushButton_root.setFlat(False)
         self.pushButton_root.setObjectName("pushButton_root")
         self.pushButton_equal = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_equal.setGeometry(QtCore.QRect(120, 320, 60, 60))
@@ -88,12 +84,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_equal.setFont(font)
         self.pushButton_equal.setMouseTracking(False)
-        self.pushButton_equal.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(32, 140, 255);\n"
+        self.pushButton_equal.setStyleSheet("QPushButton:pressed {\n"
+"background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
 "")
@@ -103,7 +95,7 @@ class Ui_MainWindow(object):
         self.pushButton_equal.setAutoExclusive(False)
         self.pushButton_equal.setAutoDefault(False)
         self.pushButton_equal.setDefault(False)
-        self.pushButton_equal.setFlat(True)
+        self.pushButton_equal.setFlat(False)
         self.pushButton_equal.setObjectName("pushButton_equal")
         self.pushButton_plus = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_plus.setGeometry(QtCore.QRect(180, 320, 60, 60))
@@ -114,11 +106,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_plus.setFont(font)
         self.pushButton_plus.setMouseTracking(False)
-        self.pushButton_plus.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_plus.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -129,7 +117,7 @@ class Ui_MainWindow(object):
         self.pushButton_plus.setAutoExclusive(False)
         self.pushButton_plus.setAutoDefault(False)
         self.pushButton_plus.setDefault(False)
-        self.pushButton_plus.setFlat(True)
+        self.pushButton_plus.setFlat(False)
         self.pushButton_plus.setObjectName("pushButton_plus")
         self.pushButton_dot = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_dot.setGeometry(QtCore.QRect(0, 320, 60, 60))
@@ -140,11 +128,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_dot.setFont(font)
         self.pushButton_dot.setMouseTracking(False)
-        self.pushButton_dot.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_dot.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -155,7 +139,7 @@ class Ui_MainWindow(object):
         self.pushButton_dot.setAutoExclusive(False)
         self.pushButton_dot.setAutoDefault(False)
         self.pushButton_dot.setDefault(False)
-        self.pushButton_dot.setFlat(True)
+        self.pushButton_dot.setFlat(False)
         self.pushButton_dot.setObjectName("pushButton_dot")
         self.pushButton_0 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_0.setGeometry(QtCore.QRect(60, 320, 60, 60))
@@ -166,9 +150,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_0.setFont(font)
         self.pushButton_0.setMouseTracking(False)
-        self.pushButton_0.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_0.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -181,7 +163,7 @@ class Ui_MainWindow(object):
         self.pushButton_0.setAutoExclusive(False)
         self.pushButton_0.setAutoDefault(False)
         self.pushButton_0.setDefault(False)
-        self.pushButton_0.setFlat(True)
+        self.pushButton_0.setFlat(False)
         self.pushButton_0.setObjectName("pushButton_0")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_3.setGeometry(QtCore.QRect(120, 260, 60, 60))
@@ -192,9 +174,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_3.setFont(font)
         self.pushButton_3.setMouseTracking(False)
-        self.pushButton_3.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_3.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -207,7 +187,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setAutoExclusive(False)
         self.pushButton_3.setAutoDefault(False)
         self.pushButton_3.setDefault(False)
-        self.pushButton_3.setFlat(True)
+        self.pushButton_3.setFlat(False)
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_1 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_1.setGeometry(QtCore.QRect(0, 260, 60, 60))
@@ -218,9 +198,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_1.setFont(font)
         self.pushButton_1.setMouseTracking(False)
-        self.pushButton_1.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_1.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -244,11 +222,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_power.setFont(font)
         self.pushButton_power.setMouseTracking(False)
-        self.pushButton_power.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_power.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -259,7 +233,7 @@ class Ui_MainWindow(object):
         self.pushButton_power.setAutoExclusive(False)
         self.pushButton_power.setAutoDefault(False)
         self.pushButton_power.setDefault(False)
-        self.pushButton_power.setFlat(True)
+        self.pushButton_power.setFlat(False)
         self.pushButton_power.setObjectName("pushButton_power")
         self.pushButton_minus = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_minus.setGeometry(QtCore.QRect(180, 260, 60, 60))
@@ -270,11 +244,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_minus.setFont(font)
         self.pushButton_minus.setMouseTracking(False)
-        self.pushButton_minus.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_minus.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -285,7 +255,7 @@ class Ui_MainWindow(object):
         self.pushButton_minus.setAutoExclusive(False)
         self.pushButton_minus.setAutoDefault(False)
         self.pushButton_minus.setDefault(False)
-        self.pushButton_minus.setFlat(True)
+        self.pushButton_minus.setFlat(False)
         self.pushButton_minus.setObjectName("pushButton_minus")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(60, 260, 60, 60))
@@ -296,9 +266,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_2.setFont(font)
         self.pushButton_2.setMouseTracking(False)
-        self.pushButton_2.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_2.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -311,7 +279,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setAutoExclusive(False)
         self.pushButton_2.setAutoDefault(False)
         self.pushButton_2.setDefault(False)
-        self.pushButton_2.setFlat(True)
+        self.pushButton_2.setFlat(False)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_6.setGeometry(QtCore.QRect(120, 200, 60, 60))
@@ -322,9 +290,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_6.setFont(font)
         self.pushButton_6.setMouseTracking(False)
-        self.pushButton_6.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_6.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -337,7 +303,7 @@ class Ui_MainWindow(object):
         self.pushButton_6.setAutoExclusive(False)
         self.pushButton_6.setAutoDefault(False)
         self.pushButton_6.setDefault(False)
-        self.pushButton_6.setFlat(True)
+        self.pushButton_6.setFlat(False)
         self.pushButton_6.setObjectName("pushButton_6")
         self.pushButton_factorial = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_factorial.setGeometry(QtCore.QRect(240, 200, 60, 60))
@@ -348,11 +314,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_factorial.setFont(font)
         self.pushButton_factorial.setMouseTracking(False)
-        self.pushButton_factorial.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_factorial.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -363,7 +325,7 @@ class Ui_MainWindow(object):
         self.pushButton_factorial.setAutoExclusive(False)
         self.pushButton_factorial.setAutoDefault(False)
         self.pushButton_factorial.setDefault(False)
-        self.pushButton_factorial.setFlat(True)
+        self.pushButton_factorial.setFlat(False)
         self.pushButton_factorial.setObjectName("pushButton_factorial")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_4.setGeometry(QtCore.QRect(0, 200, 60, 60))
@@ -374,9 +336,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_4.setFont(font)
         self.pushButton_4.setMouseTracking(False)
-        self.pushButton_4.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_4.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -389,7 +349,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.setAutoExclusive(False)
         self.pushButton_4.setAutoDefault(False)
         self.pushButton_4.setDefault(False)
-        self.pushButton_4.setFlat(True)
+        self.pushButton_4.setFlat(False)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_multiply = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_multiply.setGeometry(QtCore.QRect(180, 200, 60, 60))
@@ -400,11 +360,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_multiply.setFont(font)
         self.pushButton_multiply.setMouseTracking(False)
-        self.pushButton_multiply.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_multiply.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -415,7 +371,7 @@ class Ui_MainWindow(object):
         self.pushButton_multiply.setAutoExclusive(False)
         self.pushButton_multiply.setAutoDefault(False)
         self.pushButton_multiply.setDefault(False)
-        self.pushButton_multiply.setFlat(True)
+        self.pushButton_multiply.setFlat(False)
         self.pushButton_multiply.setObjectName("pushButton_multiply")
         self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_5.setGeometry(QtCore.QRect(60, 200, 60, 60))
@@ -426,9 +382,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_5.setFont(font)
         self.pushButton_5.setMouseTracking(False)
-        self.pushButton_5.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_5.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -441,7 +395,7 @@ class Ui_MainWindow(object):
         self.pushButton_5.setAutoExclusive(False)
         self.pushButton_5.setAutoDefault(False)
         self.pushButton_5.setDefault(False)
-        self.pushButton_5.setFlat(True)
+        self.pushButton_5.setFlat(False)
         self.pushButton_5.setObjectName("pushButton_5")
         self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_9.setGeometry(QtCore.QRect(120, 140, 60, 60))
@@ -457,9 +411,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_9.setFont(font)
         self.pushButton_9.setMouseTracking(False)
-        self.pushButton_9.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_9.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -472,7 +424,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.setAutoExclusive(False)
         self.pushButton_9.setAutoDefault(False)
         self.pushButton_9.setDefault(False)
-        self.pushButton_9.setFlat(True)
+        self.pushButton_9.setFlat(False)
         self.pushButton_9.setObjectName("pushButton_9")
         self.pushButton_mod = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_mod.setGeometry(QtCore.QRect(240, 140, 60, 60))
@@ -483,11 +435,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_mod.setFont(font)
         self.pushButton_mod.setMouseTracking(False)
-        self.pushButton_mod.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_mod.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -498,7 +446,7 @@ class Ui_MainWindow(object):
         self.pushButton_mod.setAutoExclusive(False)
         self.pushButton_mod.setAutoDefault(False)
         self.pushButton_mod.setDefault(False)
-        self.pushButton_mod.setFlat(True)
+        self.pushButton_mod.setFlat(False)
         self.pushButton_mod.setObjectName("pushButton_mod")
         self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_7.setGeometry(QtCore.QRect(0, 140, 60, 60))
@@ -509,9 +457,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_7.setFont(font)
         self.pushButton_7.setMouseTracking(False)
-        self.pushButton_7.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_7.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -524,7 +470,7 @@ class Ui_MainWindow(object):
         self.pushButton_7.setAutoExclusive(False)
         self.pushButton_7.setAutoDefault(False)
         self.pushButton_7.setDefault(False)
-        self.pushButton_7.setFlat(True)
+        self.pushButton_7.setFlat(False)
         self.pushButton_7.setObjectName("pushButton_7")
         self.pushButton_division = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_division.setGeometry(QtCore.QRect(180, 140, 60, 60))
@@ -535,11 +481,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_division.setFont(font)
         self.pushButton_division.setMouseTracking(False)
-        self.pushButton_division.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_division.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -550,7 +492,7 @@ class Ui_MainWindow(object):
         self.pushButton_division.setAutoExclusive(False)
         self.pushButton_division.setAutoDefault(False)
         self.pushButton_division.setDefault(False)
-        self.pushButton_division.setFlat(True)
+        self.pushButton_division.setFlat(False)
         self.pushButton_division.setObjectName("pushButton_division")
         self.pushButton_8 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_8.setGeometry(QtCore.QRect(60, 140, 60, 60))
@@ -561,9 +503,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_8.setFont(font)
         self.pushButton_8.setMouseTracking(False)
-        self.pushButton_8.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 0.5px;\n"
-"border-color: black;\n"
+        self.pushButton_8.setStyleSheet("QPushButton{"
 "background-color: rgb(6, 126, 255); }\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -576,7 +516,7 @@ class Ui_MainWindow(object):
         self.pushButton_8.setAutoExclusive(False)
         self.pushButton_8.setAutoDefault(False)
         self.pushButton_8.setDefault(False)
-        self.pushButton_8.setFlat(True)
+        self.pushButton_8.setFlat(False)
         self.pushButton_8.setObjectName("pushButton_8")
         self.pushButton_del = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_del.setGeometry(QtCore.QRect(0, 80, 60, 60))
@@ -587,11 +527,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_del.setFont(font)
         self.pushButton_del.setMouseTracking(False)
-        self.pushButton_del.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_del.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -602,7 +538,7 @@ class Ui_MainWindow(object):
         self.pushButton_del.setAutoExclusive(False)
         self.pushButton_del.setAutoDefault(False)
         self.pushButton_del.setDefault(False)
-        self.pushButton_del.setFlat(True)
+        self.pushButton_del.setFlat(False)
         self.pushButton_del.setObjectName("pushButton_del")
         self.pushButton_sin = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_sin.setGeometry(QtCore.QRect(120, 80, 60, 60))
@@ -613,11 +549,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_sin.setFont(font)
         self.pushButton_sin.setMouseTracking(False)
-        self.pushButton_sin.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_sin.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -628,7 +560,7 @@ class Ui_MainWindow(object):
         self.pushButton_sin.setAutoExclusive(False)
         self.pushButton_sin.setAutoDefault(False)
         self.pushButton_sin.setDefault(False)
-        self.pushButton_sin.setFlat(True)
+        self.pushButton_sin.setFlat(False)
         self.pushButton_sin.setObjectName("pushButton_sin")
         self.pushButton_cos = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_cos.setGeometry(QtCore.QRect(180, 80, 60, 60))
@@ -639,11 +571,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_cos.setFont(font)
         self.pushButton_cos.setMouseTracking(False)
-        self.pushButton_cos.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_cos.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -654,7 +582,7 @@ class Ui_MainWindow(object):
         self.pushButton_cos.setAutoExclusive(False)
         self.pushButton_cos.setAutoDefault(False)
         self.pushButton_cos.setDefault(False)
-        self.pushButton_cos.setFlat(True)
+        self.pushButton_cos.setFlat(False)
         self.pushButton_cos.setObjectName("pushButton_cos")
         self.pushButton_clear = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_clear.setGeometry(QtCore.QRect(60, 80, 60, 60))
@@ -665,11 +593,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_clear.setFont(font)
         self.pushButton_clear.setMouseTracking(False)
-        self.pushButton_clear.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_clear.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -680,7 +604,7 @@ class Ui_MainWindow(object):
         self.pushButton_clear.setAutoExclusive(False)
         self.pushButton_clear.setAutoDefault(False)
         self.pushButton_clear.setDefault(False)
-        self.pushButton_clear.setFlat(True)
+        self.pushButton_clear.setFlat(False)
         self.pushButton_clear.setObjectName("pushButton_clear")
         self.pushButton_tan = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_tan.setGeometry(QtCore.QRect(240, 80, 60, 60))
@@ -691,11 +615,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.pushButton_tan.setFont(font)
         self.pushButton_tan.setMouseTracking(False)
-        self.pushButton_tan.setStyleSheet("QPushButton{ border-style: outset;\n"
-"border-width: 1px;\n"
-"border-color: black; }\n"
-"\n"
-"QPushButton:pressed {\n"
+        self.pushButton_tan.setStyleSheet("QPushButton:pressed {\n"
 "    background-color: rgb(32, 140, 255);\n"
 "}\n"
 "\n"
@@ -706,7 +626,7 @@ class Ui_MainWindow(object):
         self.pushButton_tan.setAutoExclusive(False)
         self.pushButton_tan.setAutoDefault(False)
         self.pushButton_tan.setDefault(False)
-        self.pushButton_tan.setFlat(True)
+        self.pushButton_tan.setFlat(False)
         self.pushButton_tan.setObjectName("pushButton_tan")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
