@@ -51,6 +51,9 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def button_digit(self):
         button = self.sender()
 
+        if "Error" in self.label.text():
+            self.label.setText("")
+
         if len(self.label.text()) <= 25:
             self.label.setText(self.label.text() + button.text())
         else:
@@ -59,6 +62,22 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # dot button
 
     def button_decimal(self):
+        if "Error" in self.label.text():
+            self.label.setText("")
+
+        if "/" in self.label.text() or "*" in self.label.text() \
+                or "+" in self.label.text() \
+                or "%" in self.label.text() or "^" in self.label.text() \
+                or "√" in self.label.text():
+            for letter in self.label.text():
+                if letter == "/" or letter == "*" or letter == "+" or \
+                        letter == "%" or letter == "^" or letter == "√":
+                    text_after_symbol = self.label.text()[self.label.text().index(letter) + 1:]
+                    if "." in text_after_symbol or len(text_after_symbol) == 0:
+                        pass
+                    else:
+                        self.label.setText(self.label.text() + ".")
+
         if len(self.label.text()) <= 24:
             if "." in self.label.text() or len(self.label.text()) == 0:
                 pass
@@ -72,6 +91,9 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def button_activate(self):
         button = self.sender()
 
+        if "Error" in self.label.text():
+            self.label.setText("")
+
         if button.text() == "Sin":
             self.label.setText("Sin")
         elif button.text() == "Cos":
@@ -81,10 +103,39 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         elif button.text() == "x!":
             self.label.setText("!")
         elif len(self.label.text()) <= 24:
-            if button.text() == "-" and self.label.text().count("-") < 3:
-                self.label.setText(self.label.text() + button.text())
 
-            elif len(self.label.text()) == 0 or self.label.text()[-1] == "." \
+            if button.text() == "-":
+                if len(self.label.text()) == 0:
+                    self.label.setText(self.label.text() + "-")
+                elif self.label.text().count("-") == 3:
+                    pass
+                elif "Sin" in self.label.text() or "Cos" in self.label.text() or "Tan" in self.label.text() or \
+                        "!" in self.label.text() or "/" in self.label.text() or "*" in self.label.text() or \
+                        "+" in self.label.text() or "^" in self.label.text() or \
+                        "√" in self.label.text() or "%" in self.label.text():
+                    for letter in self.label.text():
+                        if letter == "n" or letter == "s" or letter == "+" or \
+                                letter == "*" or letter == "/" or letter == "√" or \
+                                letter == "!" or letter == "^" or letter == "%":
+                            text_after_symbol = self.label.text()[self.label.text().index(letter) + 1:]
+                            if "-" in text_after_symbol:
+                                pass
+                            elif len(text_after_symbol) == 0:
+                                self.label.setText(self.label.text() + "-")
+                elif self.label.text().count("-") == 2 and self.label.text()[-1] == "-":
+                    self.label.setText(self.label.text() + "-")
+                elif self.label.text().count("-") == 2 and self.label.text()[-1] != "-":
+                    pass
+                elif self.label.text()[0] == "-" and len(self.label.text()) > 1:
+                    self.label.setText(self.label.text() + "-")
+                elif len(self.label.text()) == 1 and self.label.text()[0] != "-":
+                    self.label.setText(self.label.text() + "-")
+                elif self.label.text().count("-") == 0:
+                    self.label.setText(self.label.text() + "-")
+                elif self.label.text().count("-") == 1 and self.label.text()[-1] == "-":
+                    self.label.setText(self.label.text() + "-")
+
+            elif len(self.label.text()) == 0 \
                     or "/" in self.label.text() or "*" in self.label.text() \
                     or "+" in self.label.text() \
                     or "%" in self.label.text() or "^" in self.label.text() \
@@ -114,9 +165,11 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 # erase last button
 
     def clear_last(self):
-        new_label = self.label.text()
-
-        self.label.setText(new_label[:-1])
+        if "Error" in self.label.text():
+            self.label.setText("")
+        else:
+            new_label = self.label.text()
+            self.label.setText(new_label[:-1])
 
 # erase all button
 
@@ -127,97 +180,116 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def equal_activate(self):
 
-        if "-" in self.label.text():
-            if "/" in self.label.text() or "*" in self.label.text() \
-                    or "+" in self.label.text() \
-                    or "%" in self.label.text() or "^" in self.label.text() \
-                    or "√" in self.label.text() or "!" in self.label.text() \
-                    or "Cos" in self.label.text() or "Sin" in self.label.text() \
-                    or "Tan" in self.label.text():
-                pass
-            elif self.label.text().count("-") == 3:
-                empty1, first_number, empty2, second_number = map(str, self.label.text().split("-"))
-                answer = sub(float("-" + first_number), float("-" + second_number))
-                if int(answer) == float(answer):
-                    answer = int(answer)
-                self.label.setText(str(answer))
-            elif self.label.text().count("-") == 2 and self.label.text()[0] != "-":
-                first_number, empty, second_number = map(str, self.label.text().split("-"))
-                answer = sub(float(first_number), float("-" + second_number))
-                if int(answer) == float(answer):
-                    answer = int(answer)
-                self.label.setText(str(answer))
-
         if "+" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("+"))
-            answer = add(first_number, second_number)
-            if int(answer) == float(answer):
-                answer = int(answer)
-            self.label.setText(str(answer))
+            try:
+                first_number, second_number = map(float, self.label.text().split("+"))
+                answer = add(first_number, second_number)
+                if int(answer) == float(answer):
+                    answer = int(answer)
+                self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
         elif "*" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("*"))
-            answer = mul(first_number, second_number)
-            if int(answer) == float(answer):
-                answer = int(answer)
-            self.label.setText(str(answer))
+            try:
+                first_number, second_number = map(float, self.label.text().split("*"))
+                answer = mul(first_number, second_number)
+                if int(answer) == float(answer):
+                    answer = int(answer)
+                self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
         elif "/" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("/"))
-            if second_number == 0:
-                self.label.setText("Error: zero division")
-            else:
+            try:
+                first_number, second_number = map(float, self.label.text().split("/"))
                 answer = div(first_number, second_number)
                 if int(answer) == float(answer):
                     answer = int(answer)
                 self.label.setText(str(answer))
-        elif "%" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("%"))
-            if float(first_number) != int(first_number):
-                self.label.setText("Error: float in modulo")
-            elif float(second_number) != int(second_number):
-                self.label.setText("Error: float in modulo")
-            elif second_number == 0:
+            except ZeroDivisionError:
                 self.label.setText("Error: zero division")
-            else:
-                answer = mod(int(first_number), int(second_number))
-                if int(answer) == float(answer):
-                    answer = int(answer)
-                self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
+        elif "%" in self.label.text():
+            try:
+                first_number, second_number = map(float, self.label.text().split("%"))
+                if float(first_number) != int(first_number):
+                    self.label.setText("Error: float in modulo")
+                elif float(second_number) != int(second_number):
+                    self.label.setText("Error: float in modulo")
+                elif second_number == 0:
+                    self.label.setText("Error: zero division")
+                else:
+                    answer = mod(int(first_number), int(second_number))
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
         elif "^" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("^"))
-            if first_number == 0 and second_number < 0:
-                self.label.setText("Error: raise zero to negative")
-            else:
-                answer = pow(first_number, second_number)
-                if int(answer) == float(answer):
-                    answer = int(answer)
-                self.label.setText(str(answer))
+            try:
+                first_number, second_number = map(float, self.label.text().split("^"))
+                if first_number == 0 and second_number < 0:
+                    self.label.setText("Error: raise zero to negative")
+                else:
+                    answer = pow(first_number, second_number)
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
         elif "√" in self.label.text():
-            first_number, second_number = map(float, self.label.text().split("√"))
-            if first_number < 0:
-                self.label.setText("Error: negative root")
-            else:
-                answer = root(first_number, second_number)
+            try:
+                first_number, second_number = map(float, self.label.text().split("√"))
+                if first_number < 0:
+                    self.label.setText("Error: negative root")
+                elif second_number == 0:
+                    self.label.setText("Error: root of zero")
+                else:
+                    answer = root(first_number, second_number)
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+            except ValueError:
+                self.label.setText("Error: syntax")
+            except:
+                self.label.setText("Error")
+        elif "Sin" in self.label.text():
+            try:
+                number = self.label.text()[3:]
+                answer = sin(float(number))
                 if int(answer) == float(answer):
                     answer = int(answer)
                 self.label.setText(str(answer))
-        elif "Sin" in self.label.text():
-            number = self.label.text()[3:]
-            answer = sin(float(number))
-            if int(answer) == float(answer):
-                answer = int(answer)
-            self.label.setText(str(answer))
+            except OverflowError:
+                self.label.setText("Error: too big number")
         elif "Cos" in self.label.text():
-            number = self.label.text()[3:]
-            answer = cos(float(number))
-            if int(answer) == float(answer):
-                answer = int(answer)
-            self.label.setText(str(answer))
+            try:
+                number = self.label.text()[3:]
+                answer = cos(float(number))
+                if int(answer) == float(answer):
+                    answer = int(answer)
+                self.label.setText(str(answer))
+            except OverflowError:
+                self.label.setText("Error: too big number")
         elif "Tan" in self.label.text():
-            number = self.label.text()[3:]
-            answer = tan(float(number))
-            if int(answer) == float(answer):
-                answer = int(answer)
-            self.label.setText(str(answer))
+            try:
+                number = self.label.text()[3:]
+                answer = tan(float(number))
+                if int(answer) == float(answer):
+                    answer = int(answer)
+                self.label.setText(str(answer))
+            except OverflowError:
+                self.label.setText("Error: too big number")
         elif "!" in self.label.text():
             number = float(self.label.text()[1:])
             if int(number) < 0:
@@ -225,5 +297,55 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             elif int(number) != number:
                 self.label.setText("Error: value must be integer")
             else:
-                answer = fact(int(number))
-                self.label.setText(str(answer))
+                try:
+                    answer = fact(int(number))
+                    self.label.setText(str(answer))
+                except RecursionError:
+                    self.label.setText("Error: too big number")
+                except:
+                    self.label.setText("Error")
+        elif "-" in self.label.text():                                  # dealing with operations with "-"
+            if self.label.text().count("-") == 3:
+                try:
+                    empty1, first_number, empty2, second_number = map(str, self.label.text().split("-"))
+                    answer = sub(float("-" + first_number), float("-" + second_number))
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+                except ValueError:
+                    self.label.setText("Error: syntax")
+                except:
+                    self.label.setText("Error")
+            elif self.label.text().count("-") == 2 and self.label.text()[0] != "-":
+                try:
+                    first_number, empty, second_number = map(str, self.label.text().split("-"))
+                    answer = sub(float(first_number), float("-" + second_number))
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+                except ValueError:
+                    self.label.setText("Error: syntax")
+                except:
+                    self.label.setText("Error")
+            elif self.label.text().count("-") == 2 and self.label.text()[0] == "-":
+                try:
+                    empty, first_number, second_number = map(str, self.label.text().split("-"))
+                    answer = sub(float("-" + first_number), float(second_number))
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+                except ValueError:
+                    self.label.setText("Error: syntax")
+                except:
+                    self.label.setText("Error")
+            elif self.label.text().count("-") == 1:
+                try:
+                    first_number, second_number = map(float, self.label.text().split("-"))
+                    answer = sub(first_number, second_number)
+                    if int(answer) == float(answer):
+                        answer = int(answer)
+                    self.label.setText(str(answer))
+                except ValueError:
+                    self.label.setText("Error: syntax")
+                except:
+                    self.label.setText("Error")
