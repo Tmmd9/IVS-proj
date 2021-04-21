@@ -30,14 +30,11 @@ def stdev(data):
   return std_dev
 
 
-def main():
-    num_array = input()
-    final_array = list()
-    for number in num_array:
-        final_array.append(number)
+num_array = input()
+final_array = list()
+for number in num_array:
+    final_array.append(number)
 
-    final=final_array[0].split(" ")
-    print("Mean of numbers: "+str(mean_calc(final)))
-    print("Standard deviation is: "+str(stdev(final)))
-
-main()
+final=final_array[0].split(" ")
+print("Mean of numbers: "+str(mean_calc(final)))
+print("Standard deviation is: "+str(stdev(final)))
