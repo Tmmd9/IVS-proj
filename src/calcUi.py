@@ -11,6 +11,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
+##
+# @brief Half generated user interface
+#
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -655,6 +658,13 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+##
+# @brief Function that add support of keyboard
+#
+# By pressing right button symbol
+# display on the screen
+#
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
@@ -715,7 +725,12 @@ class Ui_MainWindow(object):
 
         self.actionHelp.triggered.connect(self.helpWindow)
         self.actionCredits.triggered.connect(self.creditsWindow)
-
+##
+# @brief Function for help button
+#
+# Print out help for calculator
+#
+ 
     def helpWindow(self):
         msg = QMessageBox()
         msg.setWindowTitle("Help")
@@ -744,6 +759,11 @@ For answer press equal button - \"=\"
         msg.setIcon(QMessageBox.Question)
 
         x = msg.exec_()
+##
+# @brief Function for credits button
+#
+# Print out people that work on the project
+#
 
     def creditsWindow(self):
         msg = QMessageBox()

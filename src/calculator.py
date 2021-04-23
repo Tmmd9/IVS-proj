@@ -1,11 +1,19 @@
-# Connection between UI and math library
-
 from PyQt5 import QtWidgets
 from calcUi import Ui_MainWindow
 from mathlib import *
 
+##
+# @brief Connection between UI and math library
+#
 
 class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
+
+##
+# @brief Function that initialize buttons
+#
+# By pressing on the right button,
+# functions, that button represent, executes
+#
 
     def __init__(self):
         super().__init__()
@@ -46,7 +54,11 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.pushButton_equal.clicked.connect(self.equal_activate)
 
-# 0-9 buttons
+##
+# @brief Digit buttons
+#
+# Buttons 0-9
+#
 
     def button_digit(self):
         button = self.sender()
@@ -59,7 +71,11 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             pass
 
-# dot button
+##
+# @brief Decimal point button
+#
+# Button "."
+#
 
     def button_decimal(self):
         if "Error" in self.label.text():
@@ -87,7 +103,9 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             pass
 
-# operation buttons
+##
+# @brief Operation buttons
+#
 
     def button_activate(self):
         button = self.sender()
@@ -163,7 +181,11 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             pass
 
-# erase last button
+##
+# @brief Button that delete one symbol
+#
+# Erase last symbol
+#
 
     def clear_last(self):
         if "Error" in self.label.text():
@@ -172,12 +194,20 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             new_label = self.label.text()
             self.label.setText(new_label[:-1])
 
-# erase all button
+##
+# @brief Button that delete all symbols
+#
+# Erase all symbols
+#
 
     def clear_all(self):
         self.label.setText("")
 
-# = button
+##
+# @brief Equal button
+#
+# Button that calculate answer
+#
 
     def equal_activate(self):
 
