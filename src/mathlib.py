@@ -1,65 +1,71 @@
 
 pi = 3.141592653589793
 
+##
+# @brief Function rounds number to 8 decimal numbers
+#
+# @param x number to round
+# @return rounded number
+#
 
 def rounded(x):
-    """
-    Function rounds number to 8 decimal numbers
-    :param x: number to round
-    :return: rounded number
-    """
     return round(x, 8)
 
+##
+# @brief Function adds two numbers
+#
+#    @param x First number to add
+#    @param y Second number to add
+#    @return result of adding two numbers
+#
 
 def add(x, y):
-    """
-    Function adds two numbers
-    :param x: First number to add
-    :param y: Second nuber to add
-    :return: result of adding two numbers
-    """
     return rounded(x + y)
 
+##
+# @brief Function substracts y from x
+#
+# @param x base number
+# @param y number to be substracted from base
+# @return result of substraction
+#
 
 def sub(x, y):
-    """
-    Function substracts y from x
-    :param x: base number
-    :param y: number to be substracted from base
-    :return: result of substraction
-    """
     return rounded(x - y)
 
+##
+# @brief Function multiplies two numbers
+#
+# @param x base
+# @param y number to multiply by
+# @return result of multiplication
+##
 
 def mul(x, y):
-    """
-    Function multiplies two numbers
-    :param x: base
-    :param y: number to multiply by
-    :return: result of multiplication
-    """
     return rounded(x * y)
 
+##
+# @brief Function divides x by y
+#
+# @param x divident
+# @param y dividor
+# @return result of dividing
+#
 
 def div(x, y):
-    """
-    Function divides x by y
-    :param x: divident
-    :param y: dividor
-    :return: result of dividing
-    """
     if y == 0:
         raise ZeroDivisionError("Zero division")
     else:
         return rounded(x / y)
 
+##
+# @brief Function calculates factorial of given number
+#
+# @param x base
+# @return factorial result
+#
 
 def fact(x):
-    """
-    Function calculates factorial of given number
-    :param x: base
-    :return: factorial result
-    """
     if not isinstance(x, int):
         raise ValueError("Factorial supports only natural numbers")
     elif x < 0:
@@ -70,38 +76,41 @@ def fact(x):
     else:
         return x * fact(x - 1)
 
+##
+# @brief Function raises base to the power of e
+#
+# @param x base
+# @param e exponent
+# @return x raised to the power of e
+#
 
 def pow(x, e):
-    """
-    Function raises base to the power of e
-    :param x: base
-    :param e: exponent
-    :return: x raised to the power of e
-    """
     if x == 0 and e < 0:
         raise ValueError("Cannot raise zero to negative value")
     return rounded(x ** e)
 
+##
+# @brief Function finds n root of base
+#
+# @param x base
+# @param n root exponent
+# @return Nth root of given number
+#
 
 def root(x, n):
-    """
-    Function finds n root of base
-    :param x: base
-    :param n: root exponent
-    :return: Nth root of given number
-    """
     if x<0:
         raise ValueError("Cannot find root to negative value")
     return rounded(x ** (1 / float(n)))
 
+##
+# @brief Function finds modulo of base and
+#
+# @param x divident
+# @param y dividor
+# @return modulo of divident
+#
 
 def mod(x, y):
-    """
-    Function finds modulo of base and
-    :param x: divident
-    :param y: dividor
-    :return: modulo of divident
-    """
     if not isinstance(x, int):
         raise ValueError("Modulo supports only natural numbers")
     elif not isinstance(y, int):
@@ -111,13 +120,14 @@ def mod(x, y):
     else:
         return rounded(x % y)
 
+##
+# @brief Function find sinus of given number using taylor series
+#
+# @param x base
+# @return result of taylor series
+#
 
 def sin(x):
-    """
-    Function find sinus of given number using taylor series
-    :param x: base
-    :return: result of taylor series
-    """
     iterations = 50
     multiplier = 1
     n = x
@@ -128,13 +138,13 @@ def sin(x):
         n += multiplier * next_term
     return rounded(n)
 
+##
+# @brief Function find cosinus of given number using taylor series
+# @param x base
+# @return result of taylor series
+#
 
 def cos(x):
-    """
-    Function find cosinus of given number using taylor series
-    :param x: base
-    :return: result of taylor series
-    """
     iterations = 50
     multiplier = 1
     n = 1
@@ -144,12 +154,12 @@ def cos(x):
         next_term = (x ** i) / fact(i)
         n += multiplier * next_term
     return rounded(n)
-
+##
+# @brief Function find tangens of given number using previously implemented functio>
+#
+# @param x base
+# @return result of dividing sin(x) by cos(x)
+#
 
 def tan(x):
-    """
-    Function find tangens of given number using previously implemented functions sin and cos
-    :param x: base
-    :return: result of dividing sin(x) by cos(x)
-    """
     return rounded(sin(x) / cos(x))
