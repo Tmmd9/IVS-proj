@@ -1,5 +1,5 @@
-from unittest import TestCase
-from mathlib import *
+from unittest import TestCase, main
+from src.mathlib import *
 
 import math
 
@@ -234,3 +234,6 @@ class Tan(TestCase):
         self.assertEqual(0, tan(0))
         self.assertEqual(1.5574077, tan(1))
         self.assertEqual(-2.18503985, tan(2))
+       
+if __name__ == "__main__":
+    main()
