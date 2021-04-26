@@ -1,4 +1,6 @@
-#spustenie napriklad stddev.py <in.txt
+#!/usr/bin/env python3
+
+#spustenie napriklad ./stddev < in.txt
 
 from mathlib import *
 from fileinput import input
