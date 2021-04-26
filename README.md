@@ -6,7 +6,7 @@ Ubuntu 64bit
 Autori
 ------
 
-Team win
+Team1
 - xmedve04 Medvedev Anton
 - xvacla31 Václavič Jiří
 - xverev00 Verevkin Aleksandr
