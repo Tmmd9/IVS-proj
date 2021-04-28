@@ -303,6 +303,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = sin(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except Exception:
+                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -313,6 +315,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = cos(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except Exception:
+                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -323,24 +327,30 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = tan(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except Exception:
+                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
                 self.label.setText(str(answer))
         elif "!" in self.label.text():
-            number = float(self.label.text()[1:])
-            if int(number) < 0:
-                self.label.setText("Error: must be greater then -1")
-            elif int(number) != number:
-                self.label.setText("Error: value must be integer")
+            try:
+                number = float(self.label.text()[1:])
+            except Exception:
+                self.label.setText("Error: syntax")
             else:
-                try:
-                    answer = fact(int(number))
-                    self.label.setText(str(answer))
-                except RecursionError:
-                    self.label.setText("Error: too big number")
-                except Exception:
-                    self.label.setText("Error")
+                if int(number) < 0:
+                    self.label.setText("Error: must be greater then -1")
+                elif int(number) != number:
+                    self.label.setText("Error: value must be integer")
+                else:
+                    try:
+                        answer = fact(int(number))
+                        self.label.setText(str(answer))
+                    except RecursionError:
+                        self.label.setText("Error: too big number")
+                    except Exception:
+                        self.label.setText("Error")
         elif "-" in self.label.text():                                  # dealing with operations with "-"
             if self.label.text().count("-") == 3:
                 try:
