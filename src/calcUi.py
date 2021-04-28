@@ -670,6 +670,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.label.setText(_translate("MainWindow", ""))
         self.pushButton_root.setText(_translate("MainWindow", "ⁿ√"))
+        self.pushButton_root.setShortcut(_translate("MainWindow", "R"))
         self.pushButton_equal.setText(_translate("MainWindow", "="))
         self.pushButton_equal.setShortcut(_translate("MainWindow", "return"))
         self.pushButton_plus.setText(_translate("MainWindow", "+"))
@@ -711,10 +712,13 @@ class Ui_MainWindow(object):
         self.pushButton_del.setText(_translate("MainWindow", "⬅"))
         self.pushButton_del.setShortcut(_translate("MainWindow", "backspace"))
         self.pushButton_sin.setText(_translate("MainWindow", "Sin"))
+        self.pushButton_sin.setShortcut(_translate("MainWindow", "Ctrl+S"))
         self.pushButton_cos.setText(_translate("MainWindow", "Cos"))
+        self.pushButton_cos.setShortcut(_translate("MainWindow", "Ctrl+C"))
         self.pushButton_clear.setText(_translate("MainWindow", "C"))
         self.pushButton_clear.setShortcut(_translate("MainWindow", "del"))
         self.pushButton_tan.setText(_translate("MainWindow", "Tan"))
+        self.pushButton_tan.setShortcut(_translate("MainWindow", "Ctrl+T"))
         self.menuAbout.setTitle(_translate("MainWindow", "About"))
         self.actionHelp.setText(_translate("MainWindow", "Help"))
         self.actionHelp.setStatusTip(_translate("MainWindow", "Show help"))
@@ -735,25 +739,27 @@ class Ui_MainWindow(object):
         msg = QMessageBox()
         msg.setWindowTitle("Help")
         msg.setText('''The calculator provides basic functions of:
-        
-Addition - \"+\"              Delete last symbol - \"⬅\"
-Subtraction- \"-\"           Clear all - \"C\"
-Multiplication - \"⨯\"
-Division - \"÷\"
+                                     Visual   Keyboard shortcuts
+Addition -                     \"+\"           \"+\"    
+Subtraction-                \"-\"            \"-\"
+Multiplication -          \"⨯\"          \"*\"
+Division -                      \"÷\"           \"/\"
+Delete last symbol - \"⬅\"          \"Backspace\"
+Clear all -                      \"C\"           \"Del\"
 
 Advanced functions:
 
-Factorial - \"x!\"
-Root - \"ⁿ√\"
-Power - \"xⁿ\"
+Factorial -                     \"x!\"           \"!\"
+Root -                             \"√\"            \"R\"
+Power -                          \"xⁿ\"           \"^\"
 
 Trigonometric functions:
 
-Sinus - \"Sin\"
-Cosinus - \"Cos\"
-Tangens - \"Tan\"
+Sinus -                           \"Sin\"         \"Ctrl + S\"
+Cosinus -                      \"Cos\"        \"Ctrl + C\"
+Tangens -                     \"Tan\"        \"Ctrl + T\"
 
-For answer press equal button - \"=\"
+For get answer -         \"=\"            \"Enter\"
 ''')
         msg.setWindowIcon(QtGui.QIcon("calcIcon.ico"))
         msg.setIcon(QMessageBox.Question)
