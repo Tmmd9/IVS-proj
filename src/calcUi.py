@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.label.setAutoFillBackground(False)
-        self.label.setStyleSheet("background-color: rgb(6, 126, 255);\n"
+        self.label.setStyleSheet("background-color: rgb(103, 215, 255);\n"
 "border-style: outset;\n"
 "border-width: 1px;\n"
 "border-color: black;\n"
@@ -637,8 +637,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(9)
         self.menubar.setFont(font)
-        self.menubar.setStyleSheet("background-color: rgb(8, 45, 255);\n"
-"background-color: rgb(6, 126, 255);")
+        self.menubar.setStyleSheet("background-color: rgb(64, 210, 233);\n"
+"background-color: rgb(64, 210, 233);")
         self.menubar.setObjectName("menubar")
         self.menuAbout = QtWidgets.QMenu(self.menubar)
         self.menuAbout.setObjectName("menuAbout")
