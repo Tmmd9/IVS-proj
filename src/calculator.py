@@ -1,6 +1,15 @@
 from PyQt5 import QtWidgets
 from calcUi import Ui_MainWindow
 from mathlib import *
+import string
+
+
+superscript_map = {
+    "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶",
+    "7": "⁷", "8": "⁸", "9": "⁹"}
+
+upper_number = str.maketrans(''.join(superscript_map.keys()),''.join(superscript_map.values()))
+normal_number = str.maketrans(''.join(superscript_map.values()),''.join(superscript_map.keys()))
 
 ##
 # @brief Connection between UI and math library
@@ -174,8 +183,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.label.setText(self.label.text() + button.text())
                 elif button.text() == "Mod":
                     self.label.setText(self.label.text() + "%")
-                elif button.text() == "√":
-                    self.label.setText(self.label.text() + button.text())
+                elif button.text() == "ⁿ√":
+                    self.label.setText(self.label.text().translate(upper_number) + "√")
                 elif button.text() == "xⁿ":
                     self.label.setText(self.label.text() + "^")
         else:
@@ -281,9 +290,12 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.label.setText("Error: syntax")
             except Exception:
                 self.label.setText("Error")
-        elif "√" in self.label.text():
-            try:
-                first_number, second_number = map(float, self.label.text().split("√"))
+        elif "√" in self.label.text():   
+            try:                
+                first_number, second_number = self.label.text().split("√")
+                first_number = first_number.translate(normal_number)
+                first_number = float(first_number)
+                second_number = float(second_number) 
                 if first_number < 0:
                     self.label.setText("Error: negative root")
                 elif second_number == 0:
@@ -303,8 +315,6 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = sin(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
-            except Exception:
-                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -315,8 +325,6 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = cos(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
-            except Exception:
-                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -327,30 +335,24 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = tan(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
-            except Exception:
-                self.label.setText("Error: syntax")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
                 self.label.setText(str(answer))
         elif "!" in self.label.text():
-            try:
-                number = float(self.label.text()[1:])
-            except Exception:
-                self.label.setText("Error: syntax")
+            number = float(self.label.text()[1:])
+            if int(number) < 0:
+                self.label.setText("Error: must be greater then -1")
+            elif int(number) != number:
+                self.label.setText("Error: value must be integer")
             else:
-                if int(number) < 0:
-                    self.label.setText("Error: must be greater then -1")
-                elif int(number) != number:
-                    self.label.setText("Error: value must be integer")
-                else:
-                    try:
-                        answer = fact(int(number))
-                        self.label.setText(str(answer))
-                    except RecursionError:
-                        self.label.setText("Error: too big number")
-                    except Exception:
-                        self.label.setText("Error")
+                try:
+                    answer = fact(int(number))
+                    self.label.setText(str(answer))
+                except RecursionError:
+                    self.label.setText("Error: too big number")
+                except Exception:
+                    self.label.setText("Error")
         elif "-" in self.label.text():                                  # dealing with operations with "-"
             if self.label.text().count("-") == 3:
                 try:

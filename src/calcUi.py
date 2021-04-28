@@ -669,7 +669,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.label.setText(_translate("MainWindow", ""))
-        self.pushButton_root.setText(_translate("MainWindow", "√"))
+        self.pushButton_root.setText(_translate("MainWindow", "ⁿ√"))
         self.pushButton_equal.setText(_translate("MainWindow", "="))
         self.pushButton_equal.setShortcut(_translate("MainWindow", "return"))
         self.pushButton_plus.setText(_translate("MainWindow", "+"))
@@ -744,7 +744,7 @@ Division - \"÷\"
 Advanced functions:
 
 Factorial - \"x!\"
-Root - \"√\"
+Root - \"ⁿ√\"
 Power - \"xⁿ\"
 
 Trigonometric functions:
