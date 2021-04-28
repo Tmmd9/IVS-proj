@@ -671,7 +671,7 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", ""))
         self.pushButton_root.setText(_translate("MainWindow", "√"))
         self.pushButton_equal.setText(_translate("MainWindow", "="))
-        self.pushButton_equal.setShortcut(_translate("MainWindow", "="))
+        self.pushButton_equal.setShortcut(_translate("MainWindow", "return"))
         self.pushButton_plus.setText(_translate("MainWindow", "+"))
         self.pushButton_plus.setShortcut(_translate("MainWindow", "+"))
         self.pushButton_dot.setText(_translate("MainWindow", ","))
