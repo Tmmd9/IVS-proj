@@ -1,4 +1,4 @@
-xlogin01 100 (základ GUI a základní mat. operace)
-xlogin02 100 (pokročilé mat. operace)
-xlogin03 90 (profiling, instalátor)
-xlogin04 110 (testy, dokumentace)
+xmedve04 100 (code review, debugging, vylepsenie kniznice)
+xvacla31 100 (dokumentacia, instalator + odinstalator, debugging)
+xvever00 100 (návrh, mockup, GUI, prepojenie s kniznicou) 
+xkovac49 100 (matematicka knižnica + testy, profiling)
