@@ -346,19 +346,19 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     answer = int(answer)
                 self.label.setText(str(answer))
         elif "!" in self.label.text():
-            number = float(self.label.text()[1:])
-            if int(number) < 0:
-                self.label.setText("Error: must be greater then -1")
-            elif int(number) != number:
-                self.label.setText("Error: value must be integer")
-            else:
-                try:
+            try:
+                number = float(self.label.text()[1:])
+                if int(number) < 0:
+                    self.label.setText("Error: must be greater then -1")
+                elif int(number) != number:
+                    self.label.setText("Error: value must be integer")
+                else:                    
                     answer = fact(int(number))
                     self.label.setText(str(answer))
-                except RecursionError:
-                    self.label.setText("Error: too big number")
-                except Exception:
-                    self.label.setText("Error")
+            except RecursionError:
+                self.label.setText("Error: too big number")
+            except Exception:
+                self.label.setText("Error")
         elif "-" in self.label.text():                                  # dealing with operations with "-"
             if self.label.text().count("-") == 3:
                 try:
