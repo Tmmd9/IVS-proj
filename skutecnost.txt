@@ -1,1 +1,13 @@
-tento soubor bude obsahovat rozdil mezi planem projektu a skutecnosti
+# encoding: utf-8
+
+--------------------------------------------------------------------------------
+
+Rozdíly mezi vývojem a plánem vývoje:
+
+  - Byl problém vždy dodržet stanovené termíny, kvůli vlastním problémům, ale náš vyvojevy tým prisposobil se k tomu.
+  - Rozdilit práce bylo není zcela zřejmě protože bylo náročné představit casovu náročnost na různé části programu.
+  - Na konci dostali jsme několik bagu, které snadné upravili.
+  - Každý z nás dělil se svými nápady, a jsme dostali dost skušenosti a dost radostí od prací.
+  - Týmová komunikace byla ve výsledku prakticky bezproblémová.
+
+--------------------------------------------------------------------------------
