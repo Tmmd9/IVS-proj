@@ -3,3 +3,4 @@ Rozdelenie úloh bolo dodržané podla plánu.
 Pri komunikácii v tíme nenastali žiadne problémy, komunikácia prebiehala pomocou Discord serveru, tak ako bolo plánované.
 Problémy sme diskutovali na discorde, a následne došli v spoločnému riešeniu.
 S vezrovacím systémom github nemal nikto s týmu potiaže.
+Pri vytváraní inštalátoru upravenej verzie kalkulačky došlo k problémom.
