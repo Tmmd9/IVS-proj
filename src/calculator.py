@@ -291,7 +291,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except Exception:
                 self.label.setText("Error")
         elif "√" in self.label.text():   
-            try:                
+            try:
                 first_number, second_number = self.label.text().split("√")
                 first_number = first_number.translate(normal_number)
                 first_number = float(first_number)
@@ -301,7 +301,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 elif second_number == 0:
                     self.label.setText("Error: root of zero")
                 else:
-                    answer = root(first_number, second_number)
+                    answer = root(second_number, first_number)
                     if int(answer) == float(answer):
                         answer = int(answer)
                     self.label.setText(str(answer))
@@ -316,7 +316,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except OverflowError:
                 self.label.setText("Error: too big number")
             except ValueError:
-                self.label.setText("Error: Type num after Sin")
+                self.label.setText("Error")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -328,7 +328,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except OverflowError:
                 self.label.setText("Error: too big number")
             except ValueError:
-                self.label.setText("Error: Type num after Cos")
+                self.label.setText("Error")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -340,7 +340,7 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             except OverflowError:
                 self.label.setText("Error: too big number")
             except ValueError:
-                self.label.setText("Error: Type num after Cos")
+                self.label.setText("Error")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
