@@ -315,6 +315,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = sin(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except ValueError:
+                self.label.setText("Error: Type num after Sin")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -325,6 +327,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = cos(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except ValueError:
+                self.label.setText("Error: Type num after Cos")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
@@ -335,6 +339,8 @@ class CalculatorWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 answer = tan(float(number))
             except OverflowError:
                 self.label.setText("Error: too big number")
+            except ValueError:
+                self.label.setText("Error: Type num after Cos")
             else:
                 if int(answer) == float(answer):
                     answer = int(answer)
